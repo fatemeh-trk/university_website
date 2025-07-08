@@ -1,25 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="student_login.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 <body>
-  <button onclick="window.location.href='calculator.php'">Advance Calculator</button>
-  <button onclick="window.location.href='countries.php'">explore the world</button>
-  <form action="student_login.php" method="post">
+  
+  <div class="wrapper">
+    <form action="student_login.php" method="post">
+      <h1>Login</h1>
+      <br>
+
+      <div class="input_box">
+        <input type="text" name="username" placeholder="username" required>
+        <i class="material-icons">person</i>
+      </div>
+      <br>
+      
+      <div class="input_box">
+        <input type="password" name="passwod" placeholder="password" required> 
+          <i class="material-icons">lock</i>
+      </div>
+      <br>
+
+      <div class="remember_forgot">
+        <label for=""><input type="checkbox">remember me</label>
+        <a href="">forgot password?</a>
+      </div>
+      
+      <div class="input_box">
+        <input type="submit" value="login" name="login" class="btn">
+      </div>  
     <br>
-    <label for="">username</label>
-    <input type="text" name="username">
-    <br>
-    <label for="">password</label>
-    <input type="password" name="password">
-    <br>
-    
-    <input type="submit" value="log in" name="login">
-    <br>
-   
+    <div class="register_link"><p>don't have an account? <a href="">register</a> </p></div> 
   </form>
+  </div>
 </body>
 </html>
