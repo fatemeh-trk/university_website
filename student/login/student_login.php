@@ -1,32 +1,41 @@
 
 
 <?php
-  $username = $_POST["username"];
-  $password = $_POST["password"];
-  $date = date("h : m : s");
+ $db_server = "localhost";
+ $db_user = "root";
+ $db_pass = "";
+ $db_name = "uni_web";
+ $conn = "";
 
-  
 
-  foreach ($_POST as $key => $value) {
-    echo "<br>".$key ," => ", $value;
-  }
-  if(isset($_POST["login"])){
-    if (empty($username) && empty($password)){
-      echo "<br>enter username & password";
-    } 
-    elseif(empty($username) ){
-      echo "<br>enter username ";
-    } 
-    elseif(empty($password)){
-      echo "<br>enter password";
+
+ try {
+    $conn = mysqli_connect($db_server,$db_user,$db_pass,$db_name);
+}
+ catch (mysqli_sql_exception) {
+    echo "no connection";
+} 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = filter_input(INPUT_POST,"username",FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $password = filter_input(INPUT_POST,"password",FILTER_SANITIZE_SPECIAL_CHARS);
+
+    $sql= "select * from student where stu_username = '$username' and stu_pass = '$password'";
+    $result = mysqli_query($conn,$sql);
+    $count= mysqli_num_rows($result);
+    if ($count == 1){
+        header("location:../panel/student_panel.html");
     }
     else{
-      echo "<br>user {$username} loged in at {$date}";
-      header("Location: ../panel/student_panel.html");
+        echo "cant enter";
     }
+}
 
-    
-  }
+
+
+
+
 
 ?>
 

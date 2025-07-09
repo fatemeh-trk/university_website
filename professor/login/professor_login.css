@@ -1,59 +1,72 @@
-*{
-    margin: 0;
-    border: 0;
-    padding: 0;
+* {
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: url("../../images/library-book-shelf.jpg") no-repeat;
-    background-position: center;
-    background-size: cover;
-}
-
-.wrapper{
-    border: 1px solid white;
-    background-color: transparent;
-    backdrop-filter: blur(6px);
-    border-radius: 10px;
-    width: 400px;
-}
-.wrapper h1{
-    text-align: center;
-    font-size: 14px;
-    margin-top: 8px;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url("../../images/library-book-shelf.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
-.wrapper .input_box{
-    text-align: center;
-    
-    
-    
+.wrapper {
+  border: 1px solid white;
+  background-color: transparent;
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  width: 420px;
+  padding: 9px;
 }
-.wrapper input{
-    
-    border-radius: 10px;
-    
-    width: 100%;
-    height: 100%;
+.wrapper h1 {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 11px;
 }
 
-.wrapper .remember_forgot{
-    display: flex;
-    justify-content: space-between;
-    font-size: 12px;
+.wrapper .input_box {
+  text-align: center;
 }
-.remember_forgot label , a{
-    accent-color: darkgray;
-    color: white;
-    text-decoration: none;
-    
-    
+
+.wrapper input:not([type="checkbox"]) {
+  display: flex;
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  padding-left: 8px;
+  padding-right: 8px;
+
+  box-sizing: border-box;
 }
-.remember_forgot label input{
-    transform: scale(0.4);
-    
-   
+
+.wrapper .remember_forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+.remember_forgot label,
+a {
+  accent-color: darkgray;
+  color: white;
+  text-decoration: none;
+}
+.remember_forgot label input {
+  margin-left: 3px;
+  margin-right: 5px;
+}
+.register_link {
+  font-size: 12px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.input_box .btn:hover {
+  background-color: white;
+  cursor: pointer;
 }
