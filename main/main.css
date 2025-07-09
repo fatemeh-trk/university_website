@@ -3,12 +3,14 @@
     padding: 0;
     border: 0;
 }
-form{
-     background-color: rgb(160, 207, 235);
-     width: 20%;
-     text-align: center; 
-}
-input{
-    margin: 0.2cm;
-}
 
+.top_navigator ul li a{ 
+    width: 100%;
+    display: block;
+}
+nav ul{
+    
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}

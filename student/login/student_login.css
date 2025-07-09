@@ -8,7 +8,7 @@ body{
     justify-content: center; 
     align-items: center;
     min-height: 100vh;
-    background:url(../../images/stu_login_back.jpeg) no-repeat;
+    background:url(../../images/stu_login_back.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 
@@ -63,7 +63,7 @@ body{
     justify-content: space-between;
     font-size: 12px;
     margin: -15px 0 15px;
-    color: white;
+    color: rgb(34, 34, 34);
 }
 .remember_forgot label input{
     accent-color:white;

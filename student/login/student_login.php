@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location:../panel/student_panel.html");
     }
     else{
-        echo "cant enter";
+        header("location:student_login.html");
     }
 }
 
