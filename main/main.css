@@ -7,10 +7,31 @@
 .top_navigator ul li a{ 
     width: 100%;
     display: block;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    text-align: center;
+    
+    
+}
+.top_navigator ul li{
+    border: 1px solid rgb(243, 243, 243);
+    margin: 1.5px;
+    width: 20%;
+    border-radius: 10px;
+    
+    
 }
 nav ul{
     
     display: flex;
     justify-content: center;
     overflow: hidden;
+    list-style-type: none;
+    background: linear-gradient(90deg,rgba(242,242,242,1) 33%,rgba(5,106,179,1) 98%);
+    margin-top: 1%;
+    margin-left: 17%;
+    margin-right: 17%;
+    align-items: center;
+    border-radius: 10px;
 }
