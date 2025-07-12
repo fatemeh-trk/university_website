@@ -28,10 +28,40 @@ nav ul{
     justify-content: center;
     overflow: hidden;
     list-style-type: none;
-    background: linear-gradient(90deg,rgba(242,242,242,1) 33%,rgba(5,106,179,1) 98%);
+    
     margin-top: 1%;
     margin-left: 17%;
     margin-right: 17%;
     align-items: center;
     border-radius: 10px;
+}
+
+/* dropdown */
+
+.top_navigator ul .dropdown .submenu li{
+    /* display: block; */
+    border: none;
+    
+    width: 70%;
+    background-color: pink;
+    border-radius: none;
+    
+}
+.top_navigator ul .dropdown .submenu li a{
+    text-align: left;
+}
+.top_navigator ul .dropdown .submenu{
+    width: 12%;
+    position: absolute;
+    z-index: 999;
+    display: none;
+    
+
+
+}
+.top_navigator ul .dropdown:hover .submenu{
+    display: block;
+    margin: 0;
+    
+    
 }
