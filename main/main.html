@@ -31,6 +31,51 @@
 
         </ul>
     </nav>
+
+    <div class="slider_container">
+        <div class="slider">
+            <div class="slide">
+                <img src="../images/kuwait_uni.jpg" alt="">
+            </div>
+            <div class="slide slide_selected">
+                <img src="../images/michigan_uni.jpg" alt="">
+            </div>
+            <div class="slide">
+                <img src="../images/uk_uni.jpg" alt="">
+            </div>
+        </div>
+        <!-- <div class="slider_nav">
+            <span class="slider_btn"></span>
+            <span class="slider_btn btn_selected"></span>
+            <span class="slider_btn"></span>
+        </div> -->
+    </div>
+    <script>
+        document.querySelectorAll(".slider").forEach(slider => {
+            const items = slider.querySelectorAll(".slide");
+            const buttonsHTML = Array.from(items, () => {
+                return `<span class="slider_btn"></span>`;
+
+            });
+            slider.insertAdjacentHTML("beforeend", 
+            `<div class="slider_nav">${ buttonsHTML.join("")}</div>`);
+            console.log(buttonsHTML);
+            
+            const buttons = slider.querySelectorAll(".slider_btn");
+            buttons.forEach((button,i) => {
+                button.addEventListener("click", () => {
+                    items.forEach(item => item.classList.remove("slide_selected"));
+                    buttons.forEach(button => button.classList.remove("btn_selected"));
+
+                    items[i].classList.add("slide_selected");
+                    button.classList.add("btn_selected");
+                });
+            });
+
+            
+        });
+    </script>
+  
    
 </body>
 </html>

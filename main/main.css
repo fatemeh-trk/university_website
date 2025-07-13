@@ -11,11 +11,12 @@
     margin-bottom: 12px;
     text-decoration: none;
     text-align: center;
+    color: white;
     
     
 }
 .top_navigator ul li{
-    border: 1px solid rgb(243, 243, 243);
+    /* border: 1px solid rgb(243, 243, 243); */
     margin: 1.5px;
     width: 20%;
     border-radius: 10px;
@@ -35,6 +36,11 @@ nav ul{
     align-items: center;
     border-radius: 10px;
 }
+.top_navigator {
+    background-color: rgb(63, 63, 139);
+    width: 100%;
+    margin-top:-12px;
+}
 
 /* dropdown */
 
@@ -43,12 +49,13 @@ nav ul{
     border: none;
     
     width: 70%;
-    background-color: pink;
+    /* background-color: rgb(255, 255, 255); */
     border-radius: none;
     
 }
 .top_navigator ul .dropdown .submenu li a{
-    text-align: left;
+    text-align: center;
+    margin-left: 20%;
 }
 .top_navigator ul .dropdown .submenu{
     width: 12%;
@@ -64,4 +71,41 @@ nav ul{
     margin: 0;
     
     
+}
+img{
+    width: 100%;
+    height: 400px;
+}
+.slider_container{
+    position: relative;
+
+}
+.slide{
+    /* height: 300px; */
+    display: none;
+
+}
+.slide_selected{
+    display: block;
+}
+.slider_nav{
+    width: 100%;
+    position: absolute;
+    background-color: rgb(63, 63, 139);
+    height: 20px;
+    text-align: center;
+    margin-top: -4px;
+}
+.slider_btn{
+    width: 10px;
+    height: 10px;
+    align-items: center;
+    display: inline-block;
+    background-color: rgb(142, 144, 145);
+    border-radius: 20px;
+    margin: 0 7px;
+    cursor: pointer;
+}
+.btn_selected{
+    background-color: rgb(249, 249, 253);
 }
