@@ -82,10 +82,10 @@
                 echo "<script>alert('".addslashes($error_text)."');</script>";
                 }
             else{
-                $hash_prof_pass = password_hash($prof_pass,PASSWORD_DEFAULT);
+                // $hash_prof_pass = password_hash($prof_pass,PASSWORD_DEFAULT);
 
                 $Sql = "INSERT INTO professors (prof_id,prof_name,prof_family,prof_username,prof_pass) values
-                ('$prof_id','$first_name','$last_name','$username','$hash_prof_pass')";
+                ('$prof_id','$first_name','$last_name','$username','$prof_pass')";
 
                 mysqli_query($conn,$Sql);
                 echo "<script>alert('".addslashes("you registered successfully !! ")."');</script>";
