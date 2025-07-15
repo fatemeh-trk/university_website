@@ -33,6 +33,8 @@ model = "gpt-4o"
 # print(thread.id)
 
 
+assis_id = "asst_9YKyOwSL2FgOdRN7fUJi0FPu"
+th_id = "thread_fPphp4wptcdk5rvI98Jso5Qs"
 
 
 
