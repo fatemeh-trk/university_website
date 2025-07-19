@@ -1,6 +1,12 @@
 # initial setup
+
+import time
+import logging
+from datetime import datetime
 import openai
 from dotenv import find_dotenv, load_dotenv
+
+
 
 load_dotenv()
 
@@ -40,11 +46,11 @@ th_id = "thread_fPphp4wptcdk5rvI98Jso5Qs"
 
 # creating message/
 
-message = "how to focus on classes ?"
+# message = "how to focus on classes ?"
 message = client.beta.threads.messages.create(
     thread_id=th_id,
-    role='user',
-    content=message
+    role="user",
+    content="how to focus on classes ?"
 )
 
 
@@ -55,3 +61,31 @@ run = client.beta.threads.runs.create(
     assistant_id=assis_id,
     instructions='please address the user as a really intelligent person'
 )
+
+def wait_for_run_completion(client,thread_id,run_id,sleep_interval=5):
+    while True:
+        try:
+            run = client.beta.threads.runs.retrieve(thread_id=th_id,run_id=run_id)
+            if run.completed_at:
+               elapsed_time = run.completed_at - run.created_at
+               formatted_elapsed_time = time.strftime(
+                   "%H:%m:%S", time.gmtime(elapsed_time)
+               )
+               print(f"Run completed in {formatted_elapsed_time}")
+               logging.info(f"run completed in {formatted_elapsed_time}")
+
+               messages = client.beta.threads.messages.list(thread_id = th_id)
+               last_message = messages.data[0]
+               response = last_message.content[0].text.value
+               print(f"assistant response : {response}")
+               break
+        except Exception as e:
+            logging.error(f"an error occured while retrieving the run : {e}")
+            break
+
+        logging.info("waiting for run to complete ...")
+        time.sleep(sleep_interval)    
+            
+wait_for_run_completion(client=client,thread_id=th_id,run_id=run.id)            
+
+      
